@@ -79,3 +79,20 @@ cmd     : ENQUANTO VARNAME FACA cmds FIM            {char *indeterminada=malloc(
         ;
 
 %%
+
+int main() {
+
+    printf("#include <stdio.h>\n#include <stdlib.h>\n");
+
+    yyparse();
+
+    printf("int main(int argc, char *argv[]) {\n\n");
+    printf("\tprintf(\"Saida -> %%d\\n\", horaDoShow(atoi(argv[1])");
+
+    for (int i = 2; i < qtdParametros + 1; i++)
+        printf(", atoi(argv[%d])", i);
+
+    printf("));\n\treturn 0;\n\n}");
+
+    return 0;
+}
