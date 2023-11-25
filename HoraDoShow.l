@@ -1,5 +1,9 @@
 %option yywrap
 
+      /* Integrantes:
+      Isabella Gomes Pereira - 2110317
+      Thalita Rangel Bulos - 2020273
+      */
 
       #include <stdio.h>
       #include <string.h>
@@ -12,17 +16,22 @@ HORADOSHOW  return(HORADOSHOW);
 AQUIACABOU  return(AQUIACABOU)
 ENQUANTO    return(ENQUANTO);
 FACA        return(FACA);
-ZERA        return(ZERA);
+ZERA        return(ZERO);
 SE          return(SE);
 ENTAO       return(ENTAO);
 SENAO       return(SENAO);
 VEZES       return(VEZES);
 FIM         return(FIM);
-\n          return(NEWLINE); //?
+EXECUTE     retorn(EXECUTE);
+\n          return(NEWLINE);
+","         return(VIRGULA);
+"="         return(IGUAL)
 ">"         return(MAIOR);
 "<"         return(MENOR);
 ">="        return(MAIORIGUAL);
 "<="        return(MENORIGUAL);
 "+"         return(MAIS);
 "*"         return(VEZES);
-[a-zA-Z]+   {yylval.str=strdup(yytext); return (ID);}
+"("         return(APARENTESES);
+")"         return(FPARENTESES);
+[a-zA-Z]+   {yylval.str=strdup(yytext); return (VARNAME);} 
