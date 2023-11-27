@@ -9,6 +9,8 @@
 	#include <stdio.h>
 	#include <string.h>
 
+        #define YYERROR_VERBOSE 1
+
 	
 	int qtdParametros = 0; 
 
@@ -103,12 +105,13 @@ int main() {
 
     yyparse();
 
+    
+
     printf("int main(int argc, char *argv[]) {\n\n");
     printf("\tprintf(\"Saida -> %%d\\n\", horaDoShow(atoi(argv[1])");
 
-    for (int i = 0; i < qtdParametros + 1; i++){
+    for (int i = 2; i < qtdParametros + 1; i++){
         printf(", atoi(argv[%d])", i);
-        printf("lalal");
     }
 
     printf("));\n\treturn 0;\n\n}");

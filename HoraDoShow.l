@@ -35,5 +35,7 @@ EXECUTE     return(EXECUTE);
 "("         return(APARENTESES);
 ")"         return(FPARENTESES);
 [a-zA-Z]+   {yylval.str=strdup(yytext); return (VARNAME);} 
-[0-9]+      {yylval.number=atoi(yytext); return (NUM);}
+[0-9]+      {yylval.str=strdup(yytext); return (NUM);}
+
+%%
 

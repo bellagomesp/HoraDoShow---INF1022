@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-            int main(int argc, char *argv[]) {
+       int horaDoShow(int Y, int X) {
 
-	printf("Saida -> %d\n", horaDoShow(atoi(argv[1]), atoi(argv[0])lalal, atoi(argv[1])lalal, atoi(argv[2])lalal));
+	Y = X;
+
+	return Y;
+
+}
+
+int main(int argc, char *argv[]) {
+
+	printf("Saida -> %d\n", horaDoShow(atoi(argv[1]), atoi(argv[2])));
 	return 0;
 
 }

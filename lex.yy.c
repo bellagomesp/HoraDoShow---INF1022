@@ -322,6 +322,7 @@ void yyfree ( void *  );
 	}
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
+/* Begin user sect3 */
 typedef flex_uint8_t YY_CHAR;
 
 FILE *yyin = NULL, *yyout = NULL;
@@ -500,7 +501,7 @@ char *yytext;
       #include <stdio.h>
       #include <string.h>
       #include "y.tab.h"
-#line 503 "lex.yy.c"
+#line 504 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -720,7 +721,7 @@ YY_DECL
 #line 12 "HoraDoShow.l"
 
 
-#line 723 "lex.yy.c"
+#line 724 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -906,14 +907,14 @@ YY_RULE_SETUP
 case 26:
 YY_RULE_SETUP
 #line 39 "HoraDoShow.l"
-{yylval.number=atoi(yytext); return (NUM);}
+{yylval.str=strdup(yytext); return (NUM);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 41 "HoraDoShow.l"
 ECHO;
 	YY_BREAK
-#line 916 "lex.yy.c"
+#line 917 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1919,3 +1920,6 @@ void yyfree (void * ptr )
 #define YYTABLES_NAME "yytables"
 
 #line 41 "HoraDoShow.l"
+
+
+

@@ -100,7 +100,7 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 24 "HoraDoShow.y"
+#line 26 "HoraDoShow.y"
 {
 	char *str;
 	int number;
