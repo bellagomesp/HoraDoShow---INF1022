@@ -21,9 +21,9 @@ SE          return(SE);
 ENTAO       return(ENTAO);
 SENAO       return(SENAO);
 VEZES       return(VEZES);
-FIM         return(FIM);
+END         return(END);
 EXECUTE     retorn(EXECUTE);
-\n          return(NEWLINE);
+\n          return(LINEBREAK);
 ","         return(VIRGULA);
 "="         return(IGUAL)
 ">"         return(MAIOR);
@@ -31,7 +31,9 @@ EXECUTE     retorn(EXECUTE);
 ">="        return(MAIORIGUAL);
 "<="        return(MENORIGUAL);
 "+"         return(MAIS);
-"*"         return(VEZES);
+"*"         return(MULTIPLICA);
 "("         return(APARENTESES);
 ")"         return(FPARENTESES);
 [a-zA-Z]+   {yylval.str=strdup(yytext); return (VARNAME);} 
+[0-9]+      {yylval.int=atoi(yytext); return (NUM);}
+
