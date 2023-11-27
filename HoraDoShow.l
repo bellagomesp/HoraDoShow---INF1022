@@ -13,7 +13,7 @@
 RECEBA      return(RECEBA);
 DEVOLVA     return(DEVOLVA);
 HORADOSHOW  return(HORADOSHOW);
-AQUIACABOU  return(AQUIACABOU)
+AQUIACABOU  return(AQUIACABOU);
 ENQUANTO    return(ENQUANTO);
 FACA        return(FACA);
 ZERA        return(ZERO);
@@ -22,10 +22,10 @@ ENTAO       return(ENTAO);
 SENAO       return(SENAO);
 VEZES       return(VEZES);
 END         return(END);
-EXECUTE     retorn(EXECUTE);
+EXECUTE     return(EXECUTE);
 \n          return(LINEBREAK);
 ","         return(VIRGULA);
-"="         return(IGUAL)
+"="         return(IGUAL);
 ">"         return(MAIOR);
 "<"         return(MENOR);
 ">="        return(MAIORIGUAL);
@@ -35,5 +35,5 @@ EXECUTE     retorn(EXECUTE);
 "("         return(APARENTESES);
 ")"         return(FPARENTESES);
 [a-zA-Z]+   {yylval.str=strdup(yytext); return (VARNAME);} 
-[0-9]+      {yylval.int=atoi(yytext); return (NUM);}
+[0-9]+      {yylval.number=atoi(yytext); return (NUM);}
 
