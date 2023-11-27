@@ -75,8 +75,8 @@ cmd     : ENQUANTO VARNAME FACA cmds END                {char *loop1=malloc(strl
         | SE VARNAME ENTAO cmds END                     {char *condicional1=malloc(strlen($2) + strlen($4) + 13); sprintf(condicional1, "if (%s) {\n\t%s\t}\n", $2, $4); $$ = condicional1;}
         | SE VARNAME ENTAO cmds SENAO cmds END          {char *condicional2=malloc(strlen($2) + strlen($4) + strlen($6) + 24); sprintf(condicional2, "if (%s) {\n\t%s\t}\n\telse{\n\t%s\t}\n", $2, $4, $6); $$ = condicional2;}
     
-        | VARNAME MAIS VARNAME                    {char *soma=malloc(strlen($1) + strlen($3) + 6); sprintf(soma, "%s + %s;\n",$1,$3); $$ = soma;}
-        | VARNAME MULTIPLICA VARNAME                         {char *multiplica=malloc(strlen($1) + strlen($3) + 6); sprintf(multiplica, "%s * %s;\n",$1,$3); $$ = multiplica;}
+        | VARNAME MAIS VARNAME                          {char *soma=malloc(strlen($1) + strlen($3) + 6); sprintf(soma, "%s + %s;\n",$1,$3); $$ = soma;}
+        | VARNAME MULTIPLICA VARNAME                    {char *multiplica=malloc(strlen($1) + strlen($3) + 6); sprintf(multiplica, "%s * %s;\n",$1,$3); $$ = multiplica;}
         | EXECUTE cmds  VEZES  NUM END                  {char *loop2=malloc(strlen($2) + strlen($4) + 30); sprintf(loop2, "for (int i=0; i<%s; i++) {\n\t%s\t}\n", $4, $2); $$ = loop2;}
         | ENQUANTO expr FACA cmds END                   {char *loop3=malloc(strlen($2) + sterlen($4) + 16); sprintf(loop3, "while (%s) {\n\t%s\t}\n", $2, $4); $$ = loop3;}
         ;
