@@ -2,7 +2,7 @@
 #include <stdlib.h>
               int horaDoShow(int X, int Z, int NUM, int RESULT) {
 
-	NUM = O;
+	NUM = 0;
 	RESULT = 1;
 	while (X > NUM) {
 		NUM = NUM + 1;

@@ -37,5 +37,6 @@ EXECUTE     return(EXECUTE);
 [a-zA-Z]+   {yylval.str=strdup(yytext); return (VARNAME);} 
 [0-9]+      {yylval.str=strdup(yytext); return (NUM);}
 
+
 %%
 
