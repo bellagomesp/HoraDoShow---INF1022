@@ -69,9 +69,10 @@ varlist : varlist VIRGULA VARNAME                       {char *params=malloc(str
 
 retorn  : VARNAME                                       {char *retorno = malloc(strlen($1) + 14); sprintf(retorno,"\treturn %s;\n\n}\n",$1); $$ = retorno;}
         ;
+          
 
-cmds    : cmds cmd                                      {char *comandos=malloc(strlen($1) + strlen($2) + 2); sprintf(comandos, "%s\t%s", $1, $2); $$=comandos;}
-        | cmd                                           {char *comando=malloc(strlen($1) + 2); sprintf(comando, "\t%s", $1); $$=comando;}
+cmds    : cmds cmd                                      {char *comandos=malloc(strlen($1) + strlen($2) + 2); sprintf(comandos, "%s\t%s", $1, $2); $$ = comandos;}
+        | cmd                                           {char *comando=malloc(strlen($1) + 2); sprintf(comando, "\t%s", $1); $$ = comando;}
         ;
 
 cmd     : ENQUANTO VARNAME FACA cmds END                {char *loop1=malloc(strlen($2) + strlen($4) + 16); sprintf(loop1, "while (%s) {\n\t%s\t}\n", $2, $4); $$ = loop1;}
@@ -82,7 +83,7 @@ cmd     : ENQUANTO VARNAME FACA cmds END                {char *loop1=malloc(strl
         | SE VARNAME ENTAO cmds SENAO cmds END          {char *condicional2=malloc(strlen($2) + strlen($4) + strlen($6) + 24); sprintf(condicional2, "if (%s) {\n\t%s\t}\n\telse{\n\t%s\t}\n", $2, $4, $6); $$ = condicional2;}
         | VARNAME MAIS elem                             {char *soma=malloc(strlen($1) + strlen($3) + 6); sprintf(soma, "%s + %s;\n",$1,$3); $$ = soma;}
         | VARNAME MULTIPLICA elem                       {char *multiplica=malloc(strlen($1) + strlen($3) + 6); sprintf(multiplica, "%s * %s;\n",$1,$3); $$ = multiplica;}
-        | EXECUTE cmds  VEZES  elem END                 {char *loop2=malloc(strlen($2) + strlen($4) + 30); sprintf(loop2, "for (int i=0; i<%s; i++) {\n\t%s\t}\n", $4, $2); $$ = loop2;}
+        | EXECUTE cmds VEZES  elem END                 {char *loop2=malloc(strlen($2) + strlen($4) + 30); sprintf(loop2, "for (int i=0; i<%s; i++) {\n\t%s\t}\n", $4, $2); $$ = loop2;}
         | ENQUANTO expr FACA cmds END                   {char *loop3=malloc(strlen($2) + strlen($4) + 16); sprintf(loop3, "while (%s) {\n\t%s\t}\n", $2, $4); $$ = loop3;}
         ;
 

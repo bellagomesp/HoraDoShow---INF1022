@@ -485,9 +485,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    63,    63,    66,    67,    70,    73,    74,    77,    78,
-      79,    80,    81,    82,    83,    84,    85,    86,    89,    90,
-      91,    92,    95,    96
+       0,    63,    63,    66,    67,    70,    74,    75,    78,    79,
+      80,    81,    82,    83,    84,    85,    86,    87,    90,    91,
+      92,    93,    96,    97
 };
 #endif
 
@@ -1454,92 +1454,92 @@ yyreduce:
     break;
 
   case 6:
-#line 73 "HoraDoShow.y"
-    {char *comandos=malloc(strlen((yyvsp[(1) - (2)].str)) + strlen((yyvsp[(2) - (2)].str)) + 2); sprintf(comandos, "%s\t%s", (yyvsp[(1) - (2)].str), (yyvsp[(2) - (2)].str)); (yyval.str)=comandos;}
+#line 74 "HoraDoShow.y"
+    {char *comandos=malloc(strlen((yyvsp[(1) - (2)].str)) + strlen((yyvsp[(2) - (2)].str)) + 2); sprintf(comandos, "%s\t%s", (yyvsp[(1) - (2)].str), (yyvsp[(2) - (2)].str)); (yyval.str) = comandos;}
     break;
 
   case 7:
-#line 74 "HoraDoShow.y"
-    {char *comando=malloc(strlen((yyvsp[(1) - (1)].str)) + 2); sprintf(comando, "\t%s", (yyvsp[(1) - (1)].str)); (yyval.str)=comando;}
+#line 75 "HoraDoShow.y"
+    {char *comando=malloc(strlen((yyvsp[(1) - (1)].str)) + 2); sprintf(comando, "\t%s", (yyvsp[(1) - (1)].str)); (yyval.str) = comando;}
     break;
 
   case 8:
-#line 77 "HoraDoShow.y"
+#line 78 "HoraDoShow.y"
     {char *loop1=malloc(strlen((yyvsp[(2) - (5)].str)) + strlen((yyvsp[(4) - (5)].str)) + 16); sprintf(loop1, "while (%s) {\n\t%s\t}\n", (yyvsp[(2) - (5)].str), (yyvsp[(4) - (5)].str)); (yyval.str) = loop1;}
     break;
 
   case 9:
-#line 78 "HoraDoShow.y"
+#line 79 "HoraDoShow.y"
     {char *igualdade1=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 6); sprintf(igualdade1, "%s = %s;\n",(yyvsp[(1) - (3)].str),(yyvsp[(3) - (3)].str)); (yyval.str) = igualdade1;}
     break;
 
   case 10:
-#line 79 "HoraDoShow.y"
+#line 80 "HoraDoShow.y"
     {char *igualdade2=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 3); sprintf(igualdade2, "%s = %s",(yyvsp[(1) - (3)].str), (yyvsp[(3) - (3)].str)); (yyval.str) = igualdade2;}
     break;
 
   case 11:
-#line 80 "HoraDoShow.y"
+#line 81 "HoraDoShow.y"
     {char *zerar=malloc(strlen((yyvsp[(3) - (4)].str)) + 7); sprintf(zerar, "%s = 0;\n",(yyvsp[(3) - (4)].str)); (yyval.str) = zerar;}
     break;
 
   case 12:
-#line 81 "HoraDoShow.y"
+#line 82 "HoraDoShow.y"
     {char *condicional1=malloc(strlen((yyvsp[(2) - (5)].str)) + strlen((yyvsp[(4) - (5)].str)) + 13); sprintf(condicional1, "if (%s) {\n\t%s\t}\n", (yyvsp[(2) - (5)].str), (yyvsp[(4) - (5)].str)); (yyval.str) = condicional1;}
     break;
 
   case 13:
-#line 82 "HoraDoShow.y"
+#line 83 "HoraDoShow.y"
     {char *condicional2=malloc(strlen((yyvsp[(2) - (7)].str)) + strlen((yyvsp[(4) - (7)].str)) + strlen((yyvsp[(6) - (7)].str)) + 24); sprintf(condicional2, "if (%s) {\n\t%s\t}\n\telse{\n\t%s\t}\n", (yyvsp[(2) - (7)].str), (yyvsp[(4) - (7)].str), (yyvsp[(6) - (7)].str)); (yyval.str) = condicional2;}
     break;
 
   case 14:
-#line 83 "HoraDoShow.y"
+#line 84 "HoraDoShow.y"
     {char *soma=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 6); sprintf(soma, "%s + %s;\n",(yyvsp[(1) - (3)].str),(yyvsp[(3) - (3)].str)); (yyval.str) = soma;}
     break;
 
   case 15:
-#line 84 "HoraDoShow.y"
+#line 85 "HoraDoShow.y"
     {char *multiplica=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 6); sprintf(multiplica, "%s * %s;\n",(yyvsp[(1) - (3)].str),(yyvsp[(3) - (3)].str)); (yyval.str) = multiplica;}
     break;
 
   case 16:
-#line 85 "HoraDoShow.y"
+#line 86 "HoraDoShow.y"
     {char *loop2=malloc(strlen((yyvsp[(2) - (5)].str)) + strlen((yyvsp[(4) - (5)].str)) + 30); sprintf(loop2, "for (int i=0; i<%s; i++) {\n\t%s\t}\n", (yyvsp[(4) - (5)].str), (yyvsp[(2) - (5)].str)); (yyval.str) = loop2;}
     break;
 
   case 17:
-#line 86 "HoraDoShow.y"
+#line 87 "HoraDoShow.y"
     {char *loop3=malloc(strlen((yyvsp[(2) - (5)].str)) + strlen((yyvsp[(4) - (5)].str)) + 16); sprintf(loop3, "while (%s) {\n\t%s\t}\n", (yyvsp[(2) - (5)].str), (yyvsp[(4) - (5)].str)); (yyval.str) = loop3;}
     break;
 
   case 18:
-#line 89 "HoraDoShow.y"
+#line 90 "HoraDoShow.y"
     {char *maiorque=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 4); sprintf(maiorque, "%s > %s", (yyvsp[(1) - (3)].str), (yyvsp[(3) - (3)].str)); (yyval.str) = maiorque;}
     break;
 
   case 19:
-#line 90 "HoraDoShow.y"
+#line 91 "HoraDoShow.y"
     {char *menorque=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 4); sprintf(menorque, "%s < %s", (yyvsp[(1) - (3)].str), (yyvsp[(3) - (3)].str)); (yyval.str) = menorque;}
     break;
 
   case 20:
-#line 91 "HoraDoShow.y"
+#line 92 "HoraDoShow.y"
     {char *maiorigualque=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 5); sprintf(maiorigualque, "%s >= %s", (yyvsp[(1) - (3)].str), (yyvsp[(3) - (3)].str)); (yyval.str) = maiorigualque;}
     break;
 
   case 21:
-#line 92 "HoraDoShow.y"
+#line 93 "HoraDoShow.y"
     {char *menorigualque=malloc(strlen((yyvsp[(1) - (3)].str)) + strlen((yyvsp[(3) - (3)].str)) + 5); sprintf(menorigualque, "%s <= %s", (yyvsp[(1) - (3)].str), (yyvsp[(3) - (3)].str)); (yyval.str) = menorigualque;}
     break;
 
   case 22:
-#line 95 "HoraDoShow.y"
+#line 96 "HoraDoShow.y"
     {char *variavel = malloc(strlen((yyvsp[(1) - (1)].str))); sprintf(variavel,"%s",(yyvsp[(1) - (1)].str)); (yyval.str) = variavel;}
     break;
 
   case 23:
-#line 96 "HoraDoShow.y"
+#line 97 "HoraDoShow.y"
     {char *numero = malloc(strlen((yyvsp[(1) - (1)].str))); sprintf(numero,"%s",(yyvsp[(1) - (1)].str)); (yyval.str) = numero;}
     break;
 
@@ -1759,7 +1759,7 @@ yyreturn:
 }
 
 
-#line 99 "HoraDoShow.y"
+#line 100 "HoraDoShow.y"
 
 
 int main() {
