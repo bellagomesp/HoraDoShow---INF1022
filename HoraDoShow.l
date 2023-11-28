@@ -16,7 +16,7 @@ HORADOSHOW  return(HORADOSHOW);
 AQUIACABOU  return(AQUIACABOU);
 ENQUANTO    return(ENQUANTO);
 FACA        return(FACA);
-ZERA        return(ZERO);
+ZERO        return(ZERO);
 SE          return(SE);
 ENTAO       return(ENTAO);
 SENAO       return(SENAO);
